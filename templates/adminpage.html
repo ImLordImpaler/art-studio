@@ -8,32 +8,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>A C R Y L I C G I R L</title>
   </head>
-  <body class='bg-dark'>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white ">
-        <a class="navbar-brand" href="#">Admin Page</a>
+  <body style="background: url('https://wallpapers.com/images/featured/black-clouds-background-87utstxo0bgqdgh8.jpg') top right no-repeat; ">
+    <nav class="navbar navbar-expand-lg navbar-light  text-white " style='background:black;'>
+        <a class="navbar-brand text-light" href="{% url 'admin_page' %}">Admin Page</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            
+            <li><a class="nav-link active text-white" href="{% url 'indexview' %}">Home</a></li>
             
             
           </ul>
           <form class="form-inline my-2 my-lg-0">
             
-            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout?</button>
+            <a href="{% url 'logoutview' %}" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout?</a>
           </form>
         </div>
     </nav>
 
     <div class='container mt-5 bg-white py-5'>  
-        <h1>Painting Type</h1>
-            <div class='row mt-5'>
-                <div class='col-sm-8'>
+        <h1><u>Painting Type</u></h1>
+            <div class='row mt-5 px-5'>
+                <div class='col-sm-8 p-2'>
                     <h4>Add New</h4>
                     <form method='POST' action="{% url 'add_post_type'%}" > {% csrf_token %}
                         <div class="form-group">
@@ -45,7 +45,7 @@
                         <button class='btn btn-primary' type='submit'>Submit</button>
                     </form>
                 </div>
-                <div class='col-sm-4'>
+                <div class='col-sm-4 border-sm-top'>
                     <h4>List of Types </h4>
                     {% if post_types %}
                         <table class="table mt-4">
@@ -70,8 +70,8 @@
     </div>
     
     <hr />
-    <div class='container mt-5 bg-white py-5'>  
-        <h1>Paintings</h1>
+    <div class='container my-5 bg-white py-5'>  
+        <h1><u>Paintings</u></h1>
             <div class='row mt-5'>
                 <div class='col-sm-6'>
                     <h4>Add New</h4>
